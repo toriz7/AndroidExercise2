@@ -1,10 +1,10 @@
 package toriz7.com.github.AndroidExercise2
 
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import toriz7.com.github.AndroidExercise2.databinding.ActivityMainBinding
-import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
     //인터넷 권한은 확인 받을 필요 없으며, 여기서는 확인 필요한(디폴트로 거부된) 권한만 검토한다.
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.textView.text=""
 
 
-
+        /* 권한
         for(permission in permison_list){
             val chk=checkCallingOrSelfPermission(permission) //함수 기억할 것
             if(chk == PackageManager.PERMISSION_GRANTED){
@@ -42,8 +42,65 @@ class MainActivity : AppCompatActivity() {
             //거부되어 있는 권한들을 사용자에게 확인
             requestPermissions(permison_list,0)
         }
+
+         */
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        //XML 로 메뉴를 구성
+        //menuInflater.inflate(R.menu.main_menu,menu)
+
+        //코드로 구성
+        val sub=menu?.addSubMenu("코드메뉴1")
+        sub?.add(Menu.NONE,Menu.FIRST+10,Menu.NONE,"코드 메뉴1_1")
+        sub?.add(Menu.NONE,Menu.FIRST+11,Menu.NONE,"코드 메뉴1_2")
+
+        menu?.add(Menu.NONE,Menu.FIRST+1,Menu.NONE,"코드 메뉴2")
+        menu?.add(Menu.NONE,Menu.FIRST+2,Menu.NONE,"코드 메뉴3")
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //메뉴 선택  xml 로
+        when(item.itemId){
+            R.id.item1->{
+                binding.textView.text="메뉴1을 눌렀습니다."
+            }
+            R.id.item2->{
+                binding.textView.text="메뉴2을 눌렀습니다."
+            }
+            R.id.item3->{
+                binding.textView.text="메뉴3을 눌렀습니다."
+            }
+            R.id.item1->{
+                binding.textView.text="메뉴1_1을 눌렀습니다."
+            }
+            R.id.item1_2->{
+                binding.textView.text="메뉴1_2을 눌렀습니다."
+            }
+        }
+
+        when(item.itemId){
+            Menu.FIRST ->{
+                binding.textView.text="코드 메뉴1을 눌렀습니다."
+            }
+            Menu.FIRST+10 ->{
+                binding.textView.text="코드 메뉴1_1을 눌렀습니다."
+            }
+            Menu.FIRST+11 ->{
+                binding.textView.text="코드 메뉴1_2을 눌렀습니다."
+            }
+            Menu.FIRST+1 ->{
+                binding.textView.text="코드 메뉴2을 눌렀습니다."
+            }
+            Menu.FIRST+2 ->{
+                binding.textView.text="코드 메뉴3을 눌렀습니다."
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+     /*권한
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -60,4 +117,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+     */
 }
