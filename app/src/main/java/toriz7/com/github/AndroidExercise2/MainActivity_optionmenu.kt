@@ -6,16 +6,16 @@ import android.view.Menu
 import android.view.MenuItem
 import toriz7.com.github.AndroidExercise2.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity_optionmenu : AppCompatActivity() {
     //인터넷 권한은 확인 받을 필요 없으며, 여기서는 확인 필요한(디폴트로 거부된) 권한만 검토한다.
     val permison_list= arrayOf( // Manifest 는 안드로이드 것 선택
-            android.Manifest.permission.INTERNET,
-            android.Manifest.permission.ACCESS_FINE_LOCATION,
-            android.Manifest.permission.ACCESS_COARSE_LOCATION,
-            android.Manifest.permission.READ_CONTACTS,
-            android.Manifest.permission.WRITE_CONTACTS,
-            android.Manifest.permission.READ_EXTERNAL_STORAGE,
-            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        android.Manifest.permission.INTERNET,
+        android.Manifest.permission.ACCESS_FINE_LOCATION,
+        android.Manifest.permission.ACCESS_COARSE_LOCATION,
+        android.Manifest.permission.READ_CONTACTS,
+        android.Manifest.permission.WRITE_CONTACTS,
+        android.Manifest.permission.READ_EXTERNAL_STORAGE,
+        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
     )
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,23 +100,23 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    /*권한
-   override fun onRequestPermissionsResult(
-       requestCode: Int,
-       permissions: Array<out String>,
-       grantResults: IntArray
-   ) {
-       super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-       binding.textView.text=""
-       for(idx in grantResults.indices){  //indices 검색
-           if(grantResults[idx]==PackageManager.PERMISSION_GRANTED){
-               binding.textView.append("${permissions[idx]}: 허용\n")
-           }
-           else{
-               binding.textView.append("${permissions[idx]}: 거부\n")
-           }
-       }
-   }
+     /*권한
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        binding.textView.text=""
+        for(idx in grantResults.indices){  //indices 검색
+            if(grantResults[idx]==PackageManager.PERMISSION_GRANTED){
+                binding.textView.append("${permissions[idx]}: 허용\n")
+            }
+            else{
+                binding.textView.append("${permissions[idx]}: 거부\n")
+            }
+        }
+    }
 
-    */
+     */
 }
