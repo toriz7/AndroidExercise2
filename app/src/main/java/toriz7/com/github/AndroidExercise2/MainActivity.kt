@@ -8,7 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import toriz7.com.github.AndroidExercise2.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class
+MainActivity : AppCompatActivity() {
     //인터넷 권한은 확인 받을 필요 없으며, 여기서는 확인 필요한(디폴트로 거부된) 권한만 검토한다.
 
     private lateinit var binding: ActivityMainBinding
