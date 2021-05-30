@@ -1,5 +1,6 @@
 package toriz7.com.github.AndroidExercise2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -20,16 +21,10 @@ MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         setContentView(view)
         binding.textView.text=""
-    }
-
-    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
-        super.onCreateContextMenu(menu, v, menuInfo)
-        //길게 누른 view 의 id 로 분기한다.
-        when(v?.id){
-            R.id.textView -> {
-                menu?.setHeaderTitle("1번")
-                menuInflater.inflate(R.menu.menu1,menu)
-            }
+        binding.button.setOnClickListener{
+            val second_intent= Intent(this,SecondActivity::class.java)
+            startActivity(second_intent)
         }
     }
+
 }
