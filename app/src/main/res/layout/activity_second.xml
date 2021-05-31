@@ -11,6 +11,6 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="second acrtivity"
+        android:text="second activity"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 </LinearLayout>
